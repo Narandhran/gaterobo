@@ -1,5 +1,5 @@
 const { register, login, requestOtp, updateDp, getProfileInfo, updateProfile,
-    list } = require('../services/user');
+    list,verifyOtp } = require('../services/user');
 const { successHandler, errorHandler } = require('../utils/handler');
 
 module.exports = {
@@ -19,6 +19,12 @@ module.exports = {
         requestOtp(req, (err, result) => {
             if (err) errorHandler(req, res, err);
             else successHandler(req, res, 'Otp sent successfully', result);
+        });
+    },
+    verifyOtp:(req, res) => {
+        verifyOtp(req, (err, result) => {
+            if (err) errorHandler(req, res, err);
+            else successHandler(req, res, 'Verified success', result);
         });
     },
     updateDp: (req, res) => {
