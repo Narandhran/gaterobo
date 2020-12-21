@@ -9,7 +9,7 @@ module.exports = {
         ),
         transports: [
             new transports.File({
-                filename: `${config.POST_RESOURCE_BASE_PATH}logs/error.log`,
+                filename: `logs/error.log`,
                 level: 'error'
             })
         ]
@@ -20,7 +20,7 @@ module.exports = {
         ),
         transports: [
             new transports.File({
-                filename: `${config.POST_RESOURCE_BASE_PATH}logs/success.log`
+                filename: `logs/success.log`
             })
         ]
     })

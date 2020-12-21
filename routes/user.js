@@ -12,7 +12,8 @@ module.exports = app => {
      */
     app.post('/user/register', userCtl.register);
     app.post('/user/login', userCtl.login);
-    app.get('/user/requestOtp/:mobile', userCtl.requestOtp);
+    app.post('/user/sign-up-verification',userCtl.verifyOtp);
+    // app.get('/user/requestOtp/:mobile', userCtl.requestOtp);
 
     /**
      * Verified Users

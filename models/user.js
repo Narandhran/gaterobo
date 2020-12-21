@@ -18,11 +18,12 @@ var userSchema = new Schema({
         },
         required: [true, 'Email is required'], minlength: 7, maxlength: 32
     },
-    fname: { type: String, required: true, minlength: 3, maxlength: 16 },
+    fname: { type: String, required: true, minlength: 3, maxlength: 32 },
     lname: { type: String, required: false, maxlength: 16 },
     fcmToken: { type: String, required: false },
     countryCode: { type: String, required: false, minlength: 2, maxlength: 3 },
     mobile: { type: String, unique: true, required: true },
+    orgCode: { type: String },
     gender: { type: String, required: false, enum: ['male', 'female', 'other'], minlength: 4, maxlength: 6 },
     verify: {
         otp: { type: Number, require: true },
@@ -34,6 +35,14 @@ var userSchema = new Schema({
     },
     deviceId: {
         type: String
+    },
+    isVerified: {
+        type: Boolean,
+        default: false
+    },
+    password: {
+        type: String,
+        required: true
     }
 }, { timestamps: true });
 
